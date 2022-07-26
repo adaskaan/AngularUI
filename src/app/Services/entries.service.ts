@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,8 +8,8 @@ import { Observable } from 'rxjs';
 export class EntriesService  {
  // this.http.get("localhost:7225:/api/entries/getEntries").subsxribe
   getEntries(){
-    return [];
+    return []//this.http.get();
   }
-  constructor() { }
+  constructor(private http:HttpClient) { }
 }
  

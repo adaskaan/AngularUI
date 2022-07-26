@@ -7,7 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { EntriesService } from './Services/entries.service';
 import { TableComponent } from './table/table.component';
 import { EntryComponent } from './entry/entry.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { EntryComponent } from './entry/entry.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [EntriesService],
   bootstrap: [AppComponent]
