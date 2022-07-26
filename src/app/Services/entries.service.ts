@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EntriesService : Observable <T> {
+export class EntriesService  {
  // this.http.get("localhost:7225:/api/entries/getEntries").subsxribe
   getEntries(){
     return [];
