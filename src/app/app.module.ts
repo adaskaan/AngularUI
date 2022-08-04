@@ -8,12 +8,14 @@ import { EntriesService } from './Services/entries.service';
 import { TableComponent } from './table/table.component';
 import { EntryComponent } from './entry/entry.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     TableComponent,
-    EntryComponent
+    EntryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
