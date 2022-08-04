@@ -36,4 +36,11 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
   }
   
-  
+  .navbar-nav a{
+    display: inline;
+    
+    background-color:#3d3d43;
+    
+    border:none;
+    border-radius:10px;
+  }
