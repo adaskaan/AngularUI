@@ -1,15 +1,17 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Entry } from '../models/entry';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EntriesService  {
- // this.http.get("localhost:7225:/api/entries/getEntries").subsxribe
-  getEntries(){
-    return []//this.http.get();
-  }
+ path="https://localhost:7176/api/";
+
   constructor(private http:HttpClient) { }
+  getEntries():Observable<Entry[]>{
+    return this.http.get<Entry[]>(this.path+"Entries/getall");
+  }
 }
  

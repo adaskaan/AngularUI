@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { EntriesService } from './Services/entries.service';
-import { TableComponent } from './table/table.component';
 import { EntryComponent } from './entry/entry.component';
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -15,7 +14,6 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     NavComponent,
-    TableComponent,
     EntryComponent,
     LoginComponent,
     HomeComponent,

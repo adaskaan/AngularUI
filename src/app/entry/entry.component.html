@@ -1,1 +1,10 @@
-<p>entry works!</p>
+
+<div class="container">
+    <h2>Son 10</h2>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-md-11 themed-grid-col">BAŞLIK</div>
+      <div *ngFor="let entry of entries| slice:0:10" class="col-md-11 themed-grid-col" >{{entry.header}}</div>
+    </div>
+  
+  </div>
