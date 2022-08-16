@@ -18,8 +18,11 @@ export class EntriesService  {
     return this.http.get<Entry>(this.path+"Entries/detail/?id="+entryId);
   }
   add(entry:Entry){
-    this.http.post(this.path + 'Entries/add',entry).subscribe();
-    this.alertifyService.success("Entry Başarıyla Eklendi");
+    this.http.post(this.path + 'Entries/add',entry).subscribe((data:any) =>{
+      this.alertifyService.success("Entry Başarıyla Eklendi");
+      this.router.navigateByUrl('/entryDetail/'+data["id"]);
+    });
+
   }
 }
  

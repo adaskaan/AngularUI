@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { EntryDetailComponent } from './entry-detail/entry-detail.component';
 import { EntryAddComponent } from './entry-add/entry-add.component';
 import { AlertifyService } from './Services/alertify.service';
+import {JwtModule} from "@auth0/angular-jwt";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +30,11 @@ import { AlertifyService } from './Services/alertify.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    
+    
   ],
+  
   providers: [EntriesService, AlertifyService],
   bootstrap: [AppComponent]
 })
