@@ -1,1 +1,12 @@
-<p>entry-add works!</p>
+<main role = "main">
+    <div class="container">
+        <form [formGroup]="entryAddForm" (ngSubmit)="add()" class="">
+            <h2 class="mt-3 pt-3">Entry Ekle</h2>
+            <div class="form-group">
+                <input type="text" id="name" formControlname="name" class="form-control" placeholder="Entry" autofocus>
+              <!--  <span class="help-block" *ngIf="entryAddForm.get('name').hasError('required') && entryAddForm.get('name').touched">Entry Başlığı zorunlu</span>-->
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!entryAddForm.valid">Ekle</button>
+        </form>
+    </div>
+</main>
