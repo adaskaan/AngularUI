@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { EntryDetailComponent } from './entry-detail/entry-detail.component';
 import { EntryAddComponent } from './entry-add/entry-add.component';
+import { AlertifyService } from './Services/alertify.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,7 @@ import { EntryAddComponent } from './entry-add/entry-add.component';
     FormsModule, 
     ReactiveFormsModule 
   ],
-  providers: [EntriesService],
+  providers: [EntriesService, AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
