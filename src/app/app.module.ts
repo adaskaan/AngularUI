@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { EntryDetailComponent } from './entry-detail/entry-detail.component';
+import { EntryAddComponent } from './entry-add/entry-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { RegisterComponent } from './register/register.component';
     EntryComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    EntryDetailComponent,
+    EntryAddComponent
   ],
   imports: [
     BrowserModule,

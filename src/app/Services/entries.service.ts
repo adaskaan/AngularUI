@@ -13,5 +13,11 @@ export class EntriesService  {
   getEntries():Observable<Entry[]>{
     return this.http.get<Entry[]>(this.path+"Entries/getall");
   }
+  getEntryById(entryId:any):Observable<Entry>{
+    return this.http.get<Entry>(this.path+"Entries/detail/?id="+entryId);
+  }
+  add(entry:Entry){
+    this.http.post(this.path + 'Entries/add',entry).subscribe();
+  }
 }
  
