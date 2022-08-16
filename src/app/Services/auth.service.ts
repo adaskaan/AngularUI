@@ -4,6 +4,7 @@ import { LoginUser } from '../models/loginUser';
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { Route, Router } from '@angular/router';
 import { AlertifyService } from './alertify.service';
+import { RegisterUser } from '../models/registerUser';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class AuthService {
   userToken:any;
   decodedToken:any;
   helper = new JwtHelperService();
+  TOKEN_KEY="token"
   login(loginuser:LoginUser){
     let headers = new HttpHeaders();
     headers.append("Content-Type","application/json");
@@ -26,7 +28,31 @@ export class AuthService {
       this.router.navigateByUrl("/home");
     });
   }
+  register(registerUser:RegisterUser){
+    let headers = new HttpHeaders();
+    headers.append("Content-Type","application/json");
+    this.httpClient.post(this.path+"/register",registerUser,{headers:headers})
+    .subscribe(data =>{
+
+    });
+  }
   saveToken(token:any){
-    localStorage.setItem("token",token)
+    localStorage.setItem(this.TOKEN_KEY,token)
+  }
+  logout(){
+    localStorage.removeItem(this.TOKEN_KEY)
+  }
+  loggedIn(){
+    return this.helper.isTokenExpired(this.TOKEN_KEY)
+  }
+  getCurrentUserId(){
+    if(localStorage.getItem(this.TOKEN_KEY)){
+     return this.helper.decodeToken(this.token).userId
+    }
+  }
+  get token(){
+    if(localStorage.getItem(this.TOKEN_KEY)){
+      return this.helper.decodeToken().userId
+     }
   }
 }
