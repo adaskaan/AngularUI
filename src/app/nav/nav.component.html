@@ -4,9 +4,12 @@
 
     <input class="form-control form-control-dark w-50 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
-      <a class="btn btn-primary px-5" href="entryAdd">Entry Gir</a>
-      <div  class="nav-item text-nowrap">
-        <a class="btn btn-outline-primary me-2 px-5" href="login">Giriş Yap</a>
+      <div *ngIf="isAuthenticated" class="nav-item text-nowrap">
+      <a  class="btn btn-primary px-5" href="entryAdd">Entry Gir</a>
+      <a class="btn btn-outline-primary me-2 px-5" (click)="logout()" style="color: red;">Çıkış Yap</a>
+      </div>
+      <div *ngIf="!isAuthenticated" class="nav-item text-nowrap">
+        <a class="btn btn-outline-primary me-2 px-5" href="login" >Giriş Yap</a>
         <a class="btn btn-primary px-5" href="register">Kayıt Ol</a>
       </div>
       

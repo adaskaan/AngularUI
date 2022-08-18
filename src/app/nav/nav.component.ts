@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { AuthService } from '../Services/auth.service';
 
 @Component({
@@ -12,12 +13,12 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-get isAuthenticated(){
-  if(this.authService.loggedIn()==null){
-    return false;
-  }else{
-    return this.authService.loggedIn();
+  logout(){
+    this.authService.logout();
+    
   }
+get isAuthenticated(){
+    return this.authService.isAuthenticated;
    
   }
 }

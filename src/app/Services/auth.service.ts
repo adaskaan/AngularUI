@@ -41,18 +41,26 @@ export class AuthService {
   }
   logout(){
     localStorage.removeItem(this.TOKEN_KEY)
+    this.router.navigateByUrl("/home");
   }
   loggedIn(){
-    return this.helper.isTokenExpired(this.TOKEN_KEY)
+    console.log(this.helper.isTokenExpired(this.token?.toString()))
+    return !this.helper.isTokenExpired(this.token?.toString());
+
   }
   getCurrentUserId(){
-    if(localStorage.getItem(this.TOKEN_KEY)){
-     return this.helper.decodeToken(this.token).userId
+    if(this.token!=null){
+     return this.helper.decodeToken(this.token).userId;
     }
   }
   get token(){
-    if(localStorage.getItem(this.TOKEN_KEY)){
-      return this.helper.decodeToken().userId
-     }
+   return localStorage.getItem(this.TOKEN_KEY);
+  }
+  get isAuthenticated(){
+    if(this.token==null){
+      return false;
+    }else{
+      return this.loggedIn();
+    }
   }
 }
