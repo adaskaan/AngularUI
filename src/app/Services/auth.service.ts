@@ -35,6 +35,7 @@ export class AuthService {
     .subscribe(data =>{
 
     });
+    this.router.navigateByUrl("/login");
   }
   saveToken(token:any){
     localStorage.setItem(this.TOKEN_KEY,token)
@@ -44,7 +45,6 @@ export class AuthService {
     this.router.navigateByUrl("/home");
   }
   loggedIn(){
-    console.log(this.helper.isTokenExpired(this.token?.toString()))
     return !this.helper.isTokenExpired(this.token?.toString());
 
   }
