@@ -15,11 +15,11 @@ export class EntriesService  {
     return this.http.get<Entry[]>(this.path+"Entries/getall");
   }
   getEntryById(entryId:any):Observable<Entry>{
-    return this.http.get<Entry>(this.path+"Entries/detail/?id="+entryId);
+    return this.http.get<Entry>(this.path+"Entries/get/?id="+entryId);
   }
   add(entry:Entry){
     this.http.post(this.path + 'Entries/add',entry).subscribe((data:any) =>{
-      this.alertifyService.success("Entry Başarıyla Eklendi");
+      //this.alertifyService.success("Entry Başarıyla Eklendi");
       this.router.navigateByUrl('/entryDetail/'+data["id"]);
     });
 

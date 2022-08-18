@@ -1,4 +1,5 @@
 <main class="form-signin w-100 m-auto">
+
   <form #loginForm="ngForm"(ngSubmit)="register()">
     <img class="mb-4" src="/assets/images/logo.png" alt="logo" width="250" height="250">
     <h1 class="h3 mb-3 fw-normal">Kayıt Olun</h1>
@@ -15,4 +16,5 @@
     <button class="w-100 btn btn-lg btn-primary" [disabled]="!loginForm.valid" type="submit">Kayıt</button>
 
   </form>
+  
 </main>

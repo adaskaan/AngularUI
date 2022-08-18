@@ -16,6 +16,7 @@ export class EntryDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe(params=>{
       this.getEntryById(params["entryId"])
     })
+    
   }
   getEntryById(entryId:any){
     this.entryService.getEntryById(entryId).subscribe(data=>{

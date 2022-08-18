@@ -3,6 +3,7 @@ import { EntriesService } from '../Services/entries.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Entry } from '../models/entry';
 import { AlertifyService } from '../Services/alertify.service';
+import { AuthService } from '../Services/auth.service';
 @Component({
   selector: 'app-entry-add',
   templateUrl: './entry-add.component.html',
@@ -12,7 +13,7 @@ import { AlertifyService } from '../Services/alertify.service';
 export class EntryAddComponent implements OnInit {
 
   constructor(private entryService: EntriesService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,private authService:AuthService
    
     )
      { }
@@ -23,7 +24,9 @@ export class EntryAddComponent implements OnInit {
     this.entryAddForm = this.formBuilder.group(
       {
         header: ["", Validators.required],
-        body: ["", Validators.required]
+        subject: ["", Validators.required],
+        body: ["", Validators.required],
+        tags: ["", Validators.required],
       }
     )
   }
@@ -34,9 +37,12 @@ export class EntryAddComponent implements OnInit {
   add() {
     if (this.entryAddForm.valid) {
       this.entry = Object.assign({}, this.entryAddForm.value)
-      this.entry.userId = 1;
-      this.entryService.add(this.entry);
+      this.entry.userId = this.getUserId();
+      //this.entryService.add(this.entry);
       
     }
+  }
+  getUserId(){
+    return this.authService.getCurrentUserId();
   }
 }
