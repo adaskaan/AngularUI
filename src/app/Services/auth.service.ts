@@ -12,7 +12,7 @@ import { RegisterUser } from '../models/registerUser';
 export class AuthService {
 
   constructor(private httpClient:HttpClient,private router:Router,private alertifyService:AlertifyService) { }
-  path = "http://localhost:7176/api/auth";
+  path = "https://localhost:7176/api/Auth";
   userToken:any;
   decodedToken:any;
   helper = new JwtHelperService();
@@ -20,11 +20,11 @@ export class AuthService {
   login(loginuser:LoginUser){
     let headers = new HttpHeaders();
     headers.append("Content-Type","application/json");
-    this.httpClient.post(this.path+"login",loginuser,{headers:headers}).subscribe((data:any) =>{
-      this.saveToken(data['tokenString'])
-      this.userToken=data['tokenString'];
-      this.decodedToken= this.helper.decodeToken(data["tokenString"]);
-      this.alertifyService.success("Giriş Başarılı");
+      this.httpClient.post(this.path+"/login",loginuser,{headers:headers}).subscribe((data:any) =>{
+      this.saveToken(data.token);
+      this.userToken=data;
+      this.decodedToken= this.helper.decodeToken(data.token.toString());
+      //this.alertifyService.success("Giriş Başarılı");
       this.router.navigateByUrl("/home");
     });
   }
