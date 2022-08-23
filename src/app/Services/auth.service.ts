@@ -12,6 +12,7 @@ import { RegisterUser } from '../models/registerUser';
 export class AuthService {
 
   constructor(private httpClient:HttpClient,private router:Router,private alertifyService:AlertifyService) { }
+
   path = "https://localhost:7176/api/Auth";
   userToken:any;
   decodedToken:any;
@@ -62,5 +63,11 @@ export class AuthService {
     }else{
       return this.loggedIn();
     }
+  }
+  IsAdmin(){
+    if(this.token==null){
+      return false;
+    }
+    return this.helper.decodeToken(this.token).IsAdmin;
   }
 }

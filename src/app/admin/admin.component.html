@@ -1,2 +1,10 @@
 <app-nav></app-nav>
-<p>admin works!</p>
+<div class="container">
+    <h2>Onay Bekleyenler</h2>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-md-11 themed-grid-col"><b>BAŞLIK</b></div>
+      <div *ngFor="let entry of approveList" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >{{entry.header+"  "}}<button routerLink="/entryDetail/{{entry.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button></div>
+    </div>
+  
+  </div>

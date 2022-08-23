@@ -6,5 +6,5 @@ export class Entry{
     body!:string;
     tags!:string;
     subject!:string;
-
+    isApproved!:boolean
 }

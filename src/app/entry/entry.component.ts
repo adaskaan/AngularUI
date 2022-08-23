@@ -13,8 +13,14 @@ export class EntryComponent implements OnInit {
 
   ngOnInit(): void {
     this._entriesService.getEntries().subscribe(data=>{
-      this.entries = data;
+      this.GetApproveList(data);
     });
   }
-
+  GetApproveList(arr:Entry[]){
+    arr.forEach(entry => {
+      if(entry.isApproved){
+        this.entries.push(entry)
+      }
+    });
+  }
 }
