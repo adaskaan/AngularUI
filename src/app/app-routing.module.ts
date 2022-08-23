@@ -5,14 +5,15 @@ import { EntryDetailComponent } from './entry-detail/entry-detail.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
+import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'entryDetail/:entryId',component:EntryDetailComponent},
-  { path: 'entryAdd',component:EntryAddComponent}
+  { path: 'entryAdd',component:EntryAddComponent},
+  { path: 'admin',component:AdminComponent}
   
 ];
 

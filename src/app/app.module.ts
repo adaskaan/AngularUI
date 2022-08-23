@@ -14,6 +14,7 @@ import { EntryDetailComponent } from './entry-detail/entry-detail.component';
 import { EntryAddComponent } from './entry-add/entry-add.component';
 import { AlertifyService } from './Services/alertify.service';
 import {JwtModule} from "@auth0/angular-jwt";
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {JwtModule} from "@auth0/angular-jwt";
     HomeComponent,
     RegisterComponent,
     EntryDetailComponent,
-    EntryAddComponent
+    EntryAddComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
