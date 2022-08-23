@@ -73,7 +73,8 @@ export class AuthService {
     if(this.token==null){
       return false;
     }
-    return this.helper.decodeToken(this.token).isAdmin;
+    var boolValue = this.helper.decodeToken(this.token).isAdmin.toLowerCase() == 'true';
+    return boolValue ;
     
   }
 }

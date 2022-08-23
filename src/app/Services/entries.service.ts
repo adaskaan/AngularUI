@@ -31,7 +31,10 @@ export class EntriesService  {
     });
   }
   delete(entry:Entry){
-    this.http.post(this.path + 'Entries/delete',entry);
+    this.http.post(this.path + 'Entries/delete',entry).subscribe((data:any)=>{
+      this.router.navigateByUrl('/admin');
+    });
+    
   }
 }
  
