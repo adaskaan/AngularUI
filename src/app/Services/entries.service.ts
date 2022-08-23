@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -18,22 +18,24 @@ export class EntriesService  {
     return this.http.get<Entry>(this.path+"Entries/get/?id="+entryId);
   }
   add(entry:Entry){
-    this.http.post(this.path + 'Entries/add',entry).subscribe((data:any) =>{
+    this.http.post(this.path + 'Entries/add',entry, { responseType: 'text'}).subscribe((data:any) =>{
       //this.alertifyService.success("Entry Başarıyla Eklendi");
-      this.router.navigateByUrl('/entryDetail/'+data["id"]);
+      
+      location.reload()
     });
 
   }
   update(entry:Entry){
-    this.http.post(this.path + 'Entries/update',entry).subscribe((data:any) =>{
+    this.http.post(this.path + 'Entries/update',entry,{ responseType: 'text'}).subscribe((data:any) =>{
       //this.alertifyService.success("Entry Başarıyla Güncellendi");
-      this.router.navigateByUrl('/entryDetail/'+data["id"]);
+      location.reload()
     });
   }
   delete(entry:Entry){
-    this.http.post(this.path + 'Entries/delete',entry).subscribe((data:any)=>{
-      this.router.navigateByUrl('/admin');
+    this.http.post(this.path + 'Entries/delete',entry,{ responseType: 'text'}).subscribe((data:any)=>{
+      location.reload()
     });
+    
     
   }
 }

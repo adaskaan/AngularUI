@@ -38,8 +38,7 @@ export class EntryAddComponent implements OnInit {
     if (this.entryAddForm.valid) {
       this.entry = Object.assign({}, this.entryAddForm.value)
       this.entry.userId = this.getUserId();
-      this.entryService.add(this.entry);
-      
+      this.entryService.add(this.entry);  
     }
   }
   getUserId(){
