@@ -13,12 +13,11 @@ import { AuthService } from '../Services/auth.service';
 export class EntryAddComponent implements OnInit {
 
   constructor(private entryService: EntriesService,
-    private formBuilder: FormBuilder,private authService:AuthService
-   
-    )
-     { }
+    private formBuilder: FormBuilder,
+    private authService:AuthService 
+    )  { }
   entry!: Entry;
-  entryAddForm!: FormGroup
+  entryAddForm !:FormGroup;
 
   createEntryForm() {
     this.entryAddForm = this.formBuilder.group(
@@ -29,18 +28,17 @@ export class EntryAddComponent implements OnInit {
         tags: ["", Validators.required],
       }
     )
+
   }
 
   ngOnInit(): void {
-    this.createEntryForm();
+   this.createEntryForm();
   }
   add() {
     if (this.entryAddForm.valid) {
       this.entry = Object.assign({}, this.entryAddForm.value)
       this.entry.userId = this.getUserId();
-      this.entry.isApproved=false;
-      
-      //this.entryService.add(this.entry);
+      this.entryService.add(this.entry);
       
     }
   }

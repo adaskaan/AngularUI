@@ -4,20 +4,22 @@
         <form [formGroup]="entryAddForm" (ngSubmit)="add()" class="">
             <h2 class="mt-3 pt-3">Entry Ekle</h2>
             <div class="form-group">
-                <input type="text" id="header" formControlname="header" class="form-control" placeholder="Başlık" autofocus>
-                <input type="text" id="subject" formControlname="subject" class="form-control" placeholder="Konu" autofocus>
+                <input type="text" id="header" formControlName="header" class="form-control" placeholder="Başlık" autofocus >
+                <input type="text" id="subject" formControlName="subject" class="form-control" placeholder="Konu" autofocus>
       
 
                 <div class="input-group">
                     <div class="input-group-prepend">
                     </div>
-                    <textarea class="form-control" formControlname="body" aria-label="With textarea"  placeholder="Açıklama" autofocus></textarea>
+                    <textarea class="form-control" formControlName="body" aria-label="With textarea"  placeholder="Açıklama" autofocus></textarea>
                   </div>
                   
-                <input type="text" id="tags" formControlname="tags" class="form-control" placeholder="Etiketler" autofocus>
+                <input type="text" id="tags" formControlName="tags" class="form-control" placeholder="Etiketler" autofocus>
               <!--  <span class="help-block" *ngIf="entryAddForm.get('name').hasError('required') && entryAddForm.get('name').touched">Entry Başlığı zorunlu</span>-->
             </div>
             <button type="submit" class="btn btn-lg btn-primary mb-4 btn-block" [disabled]="!entryAddForm.valid">Ekle</button>
+            <h6>{{entryAddForm.value|json}}</h6>
+            <h6>{{entryAddForm.status|json}}</h6>
         </form>
     </div>
 </main>

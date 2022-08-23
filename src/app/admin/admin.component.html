@@ -7,6 +7,6 @@
       <div *ngFor="let entry of approveList" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >{{entry.header+"  "}}<button routerLink="/entryDetail/{{entry.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button><button (ngSubmit)="approve(entry)" style="margin: 5px; background-color: green; color:white" class="btn btn-sm btn-outline-primary ">Onayla</button><button (ngSubmit)="delete(entry)" style="background-color: red; color:white" class="btn btn-sm btn-outline-primary ">Sil</button></div>
     </div>
   </div>
-  <div *ngIf="!isAdmin">
+  <div *ngIf="isAdmin">
     <h1>FORBIDDEN</h1>
   </div>

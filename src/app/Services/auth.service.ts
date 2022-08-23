@@ -26,7 +26,7 @@ export class AuthService {
       this.userToken=data;
       this.decodedToken= this.helper.decodeToken(data.token.toString());
       //this.alertifyService.success("Giriş Başarılı");
-      if(this.IsAdmin){
+      if(this.IsAdmin==true){
         this.router.navigateByUrl("/admin");
       }else{
         this.router.navigateByUrl("/home");
@@ -73,6 +73,7 @@ export class AuthService {
     if(this.token==null){
       return false;
     }
-    return this.helper.decodeToken(this.token).IsAdmin;
+    return this.helper.decodeToken(this.token).isAdmin;
+    
   }
 }
