@@ -24,4 +24,14 @@ export class AdminComponent implements OnInit {
       }
     });
   }
+  get isAdmin(){
+    return this.authService.IsAdmin;
+  }
+  approve(entry:Entry){
+    entry.isApproved=true;
+    this.entriesService.update(entry);
+  }
+  delete(entry:Entry){
+    this.entriesService.delete(entry);
+  }
 }

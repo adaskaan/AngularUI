@@ -26,7 +26,12 @@ export class AuthService {
       this.userToken=data;
       this.decodedToken= this.helper.decodeToken(data.token.toString());
       //this.alertifyService.success("Giriş Başarılı");
-      this.router.navigateByUrl("/home");
+      if(this.IsAdmin){
+        this.router.navigateByUrl("/admin");
+      }else{
+        this.router.navigateByUrl("/home");
+      }
+      
     });
   }
   register(registerUser:RegisterUser){
@@ -64,7 +69,7 @@ export class AuthService {
       return this.loggedIn();
     }
   }
-  IsAdmin(){
+  get IsAdmin(){
     if(this.token==null){
       return false;
     }

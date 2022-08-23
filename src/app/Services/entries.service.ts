@@ -24,5 +24,14 @@ export class EntriesService  {
     });
 
   }
+  update(entry:Entry){
+    this.http.post(this.path + 'Entries/update',entry).subscribe((data:any) =>{
+      //this.alertifyService.success("Entry Başarıyla Güncellendi");
+      this.router.navigateByUrl('/entryDetail/'+data["id"]);
+    });
+  }
+  delete(entry:Entry){
+    this.http.post(this.path + 'Entries/delete',entry);
+  }
 }
  
