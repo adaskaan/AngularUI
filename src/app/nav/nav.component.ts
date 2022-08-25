@@ -22,4 +22,7 @@ get isAuthenticated(){
     return this.authService.isAuthenticated;
    
   }
+get isAdmin(){
+  return this.authService.IsAdmin;
+}
 }

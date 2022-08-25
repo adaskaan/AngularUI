@@ -15,6 +15,8 @@ import { EntryAddComponent } from './entry-add/entry-add.component';
 import { AlertifyService } from './Services/alertify.service';
 import {JwtModule} from "@auth0/angular-jwt";
 import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CategoryAddComponent } from './category-add/category-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { AdminComponent } from './admin/admin.component';
     RegisterComponent,
     EntryDetailComponent,
     EntryAddComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileComponent,
+    CategoryAddComponent
   ],
   imports: [
     BrowserModule,

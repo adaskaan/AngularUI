@@ -4,11 +4,14 @@
 
     <input class="form-control form-control-dark w-50 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
     <div class="navbar-nav">
-      <div *ngIf="isAuthenticated" class="nav-item text-nowrap">
-      <a  class="btn btn-primary px-5" href="entryAdd">Entry Gir</a>
+      <div *ngIf="isAuthenticated==true" class="nav-item text-nowrap">
+      <a *ngIf="isAdmin==true" href="categoryAdd" class="btn btn-outline-primary me-1 px-4" style="color: orange;">Kategori Ekle</a>
+      <a *ngIf="isAdmin==false" href="profile" class="btn btn-outline-primary me-1 px-5" style="color: orange;">Profil</a>
+      <a  class="btn btn-primary px-5" href="entryAdd" style="margin: 7px;">Entry Gir</a>
       <a class="btn btn-outline-primary me-2 px-5" (click)="logout()" style="color: red;">Çıkış Yap</a>
+ 
       </div>
-      <div *ngIf="!isAuthenticated" class="nav-item text-nowrap">
+      <div *ngIf="isAuthenticated==false" class="nav-item text-nowrap">
         <a class="btn btn-outline-primary me-2 px-5" href="login" >Giriş Yap</a>
         <a class="btn btn-primary px-5" href="register">Kayıt Ol</a>
       </div>
