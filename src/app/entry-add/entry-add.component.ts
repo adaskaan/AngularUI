@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { Entry } from '../models/entry';
 import { AlertifyService } from '../Services/alertify.service';
 import { AuthService } from '../Services/auth.service';
+import { Category } from '../models/category';
+import { CategoriesService } from '../Services/categories.service';
 @Component({
   selector: 'app-entry-add',
   templateUrl: './entry-add.component.html',
@@ -14,10 +16,12 @@ export class EntryAddComponent implements OnInit {
 
   constructor(private entryService: EntriesService,
     private formBuilder: FormBuilder,
-    private authService:AuthService 
+    private authService:AuthService,
+    private categoryService:CategoriesService 
     )  { }
   entry!: Entry;
   entryAddForm !:FormGroup;
+  categories: Category[] = [];
 
   createEntryForm() {
     this.entryAddForm = this.formBuilder.group(
@@ -33,7 +37,11 @@ export class EntryAddComponent implements OnInit {
 
   ngOnInit(): void {
    this.createEntryForm();
+   this.categoryService.getCategories().subscribe(data=>{
+    this.getCategoryList(data);
+  });
   }
+
   add() {
     if (this.entryAddForm.valid) {
       this.entry = Object.assign({}, this.entryAddForm.value)
@@ -44,4 +52,11 @@ export class EntryAddComponent implements OnInit {
   getUserId(){
     return this.authService.getCurrentUserId();
   }
+  getCategoryList(arr:Category[]){
+    arr.forEach(element => {
+        this.categories.push(element)
+    });
+  }
+                
+  
 }

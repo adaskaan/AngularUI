@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CategoryAddComponent } from './category-add/category-add.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'entryDetail/:entryId',component:EntryDetailComponent},
   { path: 'entryAdd',component:EntryAddComponent},
-  { path: 'admin',component:AdminComponent}
+  { path: 'admin',component:AdminComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'categoryAdd',component:CategoryAddComponent}
   
 ];
 

@@ -1,1 +1,18 @@
-<p>category-add works!</p>
+<app-nav></app-nav>
+<main role = "main">
+    <div *ngIf="isAdmin==true" class="container">
+        <form [formGroup]="categoryAddForm" (ngSubmit)="add()" class="">
+            <h2 class="mt-3 pt-3">Kategori Ekle</h2>
+            <div class="form-group">
+                <input type="text" id="name" formControlName="categoryName" class="form-control" placeholder="Kategori Adı" autofocus >
+            </div>
+            <button type="submit" style="margin-top: 10px ;" class="btn btn-lg btn-primary mb-2 btn-block" [disabled]="!categoryAddForm.valid">Ekle</button>
+            <h6>{{categoryAddForm.value|json}}</h6>
+            <h6>{{categoryAddForm.status|json}}</h6>
+        </form>
+    </div>
+    <div *ngIf="isAdmin==false">
+        <h1>FORBIDDEN
+        </h1>
+    </div>
+</main>
