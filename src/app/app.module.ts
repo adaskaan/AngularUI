@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +39,7 @@ import { CategoryAddComponent } from './category-add/category-add.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule ,
-    
+    ReactiveFormsModule 
     
   ],
   

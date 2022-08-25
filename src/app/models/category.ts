@@ -1,8 +1,8 @@
 export class Category{
     id!: number;
-    name!: string;
-    
+    categoryName!: string;
+
     public toString = () : string => {
-        return this.name;
+        return this.categoryName;
     }
 }

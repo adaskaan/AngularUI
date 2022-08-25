@@ -31,4 +31,7 @@ export class ProfileComponent implements OnInit {
   get User(){
     return this.authService.CurrentUserName;
   }
+  delete(entry:Entry){
+    this._entriesService.delete(entry);
+  }
 }

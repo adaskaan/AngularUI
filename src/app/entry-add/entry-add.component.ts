@@ -13,7 +13,7 @@ import { CategoriesService } from '../Services/categories.service';
   providers: [EntriesService]
 })
 export class EntryAddComponent implements OnInit {
-
+  public allowCustom = true;
   constructor(private entryService: EntriesService,
     private formBuilder: FormBuilder,
     private authService:AuthService,
@@ -22,12 +22,13 @@ export class EntryAddComponent implements OnInit {
   entry!: Entry;
   entryAddForm !:FormGroup;
   categories: Category[] = [];
-
+  category!:Category;
   createEntryForm() {
     this.entryAddForm = this.formBuilder.group(
       {
         header: ["", Validators.required],
         subject: ["", Validators.required],
+        category:[null,Validators.required],
         body: ["", Validators.required],
         tags: ["", Validators.required],
       }
@@ -55,6 +56,7 @@ export class EntryAddComponent implements OnInit {
   getCategoryList(arr:Category[]){
     arr.forEach(element => {
         this.categories.push(element)
+        console.log(element.categoryName);
     });
   }
                 

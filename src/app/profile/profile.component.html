@@ -4,7 +4,8 @@
     <hr>
     <div class="row mb-3">
       <div class="col-md-11 themed-grid-col"><b>BAŞLIK</b></div>
-      <div *ngFor="let entry of entries" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >{{entry.header+"  "}}<button routerLink="/entryDetail/{{entry.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button>
+      <div *ngFor="let entry of entries" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >{{entry.header+"  "}}
+        <button routerLink="/entryDetail/{{entry.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button> <button (click)="delete(entry)" style="background-color: red; color:white" class="btn btn-sm btn-outline-primary ">Sil</button>
         <div *ngIf="entry.isApproved==false" class="notapproved">
             Onay Bekliyor
         </div>
