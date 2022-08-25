@@ -33,10 +33,10 @@ export class EntryDetailComponent implements OnInit {
   getCategoryName(id:number){
 
     var temp="none"
-    console.log(id)
+    
       this.categories.forEach(element => {
         if(id==element.id){
-          console.log("geldi")
+          
           temp =  element.categoryName;  
 
         }       

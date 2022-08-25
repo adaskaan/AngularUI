@@ -15,28 +15,27 @@ export class CategoriesComponent implements OnInit {
   category! : Category;
   entries:Entry[]=[];
   result:Entry[]=[];
+  id!:number;
   ngOnInit(): void {
-    this.entryService.getEntries().subscribe(data=>{
-      this.getEntries(data)
-    })
+
     this.activatedRoute.params.subscribe(params=>{
       this.getByCategoryList(params["categoryId"])
     })
-
+    this.entryService.getEntries().subscribe(data=>{
+      this.getEntries(data)
+    })
   }
   
   getByCategoryList(id:number){
-        this.entries.forEach(element => {
-          if(element.categoryId==id){
-            this.result.push(element)
-          }
-        
-        
-    });
+    this.id=id;
+
   }
+  
   getEntries(arr:Entry[]){
     arr.forEach(element=>{
+      if(element.categoryId==this.id){
       this.entries.push(element);
+      }
     });
   }
 

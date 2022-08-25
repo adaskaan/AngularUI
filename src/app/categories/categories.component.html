@@ -1,4 +1,18 @@
-<p>categories works!</p>
-<div *ngFor="let element of result">
-    <h1>{{element.header}</h1>
-</div>
+<app-nav></app-nav>
+
+<div class="container">
+    <h2>todo</h2>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-md-11 themed-grid-col"><b>BAŞLIK</b></div>
+      <div *ngFor="let element of entries" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >
+      <div *ngIf="element.categoryId==this.id" >
+        <li >{{element.header}}</li>
+        <button routerLink="/entryDetail/{{element.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button>
+      </div>
+       
+      
+    </div>
+    </div>
+  
+  </div>
