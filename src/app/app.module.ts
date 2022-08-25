@@ -18,6 +18,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CategoriesComponent } from './categories/categories.component';
     AdminComponent,
     ProfileComponent,
     CategoryAddComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SearchComponent
  
   ],
   imports: [
