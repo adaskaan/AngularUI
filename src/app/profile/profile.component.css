@@ -1,0 +1,39 @@
+.themed-grid-col {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(9, 4, 4, 0.25);
+    border: 1px solid rgba(86, 61, 124, .2);
+    
+  }
+  
+  .themed-container {
+    padding: .75rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(0, 123, 255, .15);
+    border: 1px solid rgba(0, 123, 255, .2);
+  }
+  .link {
+    color:rgb(16, 19, 21);
+    text-transform: capitalize;
+  }
+  a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+.notapproved{
+    color: red;
+}
+.approved{
+    color: greenyellow;
+}

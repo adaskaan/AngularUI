@@ -1,1 +1,17 @@
-<p>profile works!</p>
+<app-nav></app-nav>
+<div class="container">
+    <h2>"{{User}}" Kullanıcısının Gönderileri</h2>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-md-11 themed-grid-col"><b>BAŞLIK</b></div>
+      <div *ngFor="let entry of entries" style = "text-transform:capitalize;" class="col-md-11 themed-grid-col" >{{entry.header+"  "}}<button routerLink="/entryDetail/{{entry.id}}" class="btn btn-sm btn-outline-primary ">Detaylar</button>
+        <div *ngIf="entry.isApproved==false" class="notapproved">
+            Onay Bekliyor
+        </div>
+        <div *ngIf="entry.isApproved==true" class="approved">
+            Onaylandı 
+        </div>
+    </div>
+    </div>
+  
+  </div>

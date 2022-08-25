@@ -74,7 +74,13 @@ export class AuthService {
       return false;
     }
     var boolValue = this.helper.decodeToken(this.token).isAdmin.toLowerCase() == 'true';
-    return boolValue ;
-    
+    return boolValue ;   
+  }
+  get CurrentUserName(){
+    if(this.token==null){
+      return "none";
+    }
+    return this.helper.decodeToken(this.token).userName;
+   
   }
 }
