@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
+import { CategoriesComponent } from './categories/categories.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'entryAdd',component:EntryAddComponent},
   { path: 'admin',component:AdminComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'categoryAdd',component:CategoryAddComponent}
+  {path:'categoryAdd',component:CategoryAddComponent},
+  { path: 'categories/:categoryId',component:CategoriesComponent}
   
 ];
 

@@ -38,5 +38,8 @@ export class EntriesService  {
     
     
   }
+  getByCategory(id:number):Observable<Entry>{
+    return this.http.get<Entry>(this.path+"Entries/getbycategory/?id="+id);
+  }
 }
  

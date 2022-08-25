@@ -17,6 +17,7 @@ import {JwtModule} from "@auth0/angular-jwt";
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CategoryAddComponent } from './category-add/category-add.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CategoryAddComponent } from './category-add/category-add.component';
     EntryAddComponent,
     AdminComponent,
     ProfileComponent,
-    CategoryAddComponent
+    CategoryAddComponent,
+    CategoriesComponent
  
   ],
   imports: [

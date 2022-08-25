@@ -8,7 +8,7 @@
         <input  type="text" id="subject" formControlName="subject" class="form-control" placeholder="Konu" autofocus>
         <div class="form-control" >
           Kategori:
-        <select  formControlName="category" >
+        <select  formControlName="categoryId" >
           <option *ngFor="let category of categories"value="{{category.id}}">{{category.categoryName}}</option>
         </select>
       </div>

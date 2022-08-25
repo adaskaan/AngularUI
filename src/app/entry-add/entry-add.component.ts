@@ -28,7 +28,7 @@ export class EntryAddComponent implements OnInit {
       {
         header: ["", Validators.required],
         subject: ["", Validators.required],
-        category:[null,Validators.required],
+        categoryId:[null,Validators.required],
         body: ["", Validators.required],
         tags: ["", Validators.required],
       }
@@ -56,7 +56,7 @@ export class EntryAddComponent implements OnInit {
   getCategoryList(arr:Category[]){
     arr.forEach(element => {
         this.categories.push(element)
-        console.log(element.categoryName);
+        
     });
   }
                 
